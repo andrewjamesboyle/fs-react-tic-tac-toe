@@ -13,3 +13,4 @@ export default function Box({ id, value }) {
     }}>{value}</div>
   );
 }
+

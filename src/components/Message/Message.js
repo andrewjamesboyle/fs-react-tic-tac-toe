@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GameContext } from '../../context/GameContext/GameContext';
 import './Message.css';
 
 export default function Message() {
-  return (
-    <div className='game-status'>Game Status</div>
+  const { gameMessage } = useContext(GameContext);
+
+  return (  
+    <div className='game-status'>{gameMessage}</div>
   );
 }
