@@ -7,7 +7,12 @@ export default function GameBoard() {
   const { board } = useContext(GameContext);
 
   return (
-    board.map((box) => (
-      <div className='game-board' key={box.id}><Box /></div>
-    )));
+    <div className='game-board-container'>
+      {board.map((box) => (
+        <div className='game-board' key={box.id}>
+          <Box />
+        </div>
+      ))}
+    </div>
+  );
 }
