@@ -9,8 +9,8 @@ export default function GameBoard() {
   return (
     <div className='game-board-container'>
       {board.map((box) => (
-        <div className='game-board' key={box.id}>
-          <Box />
+        <div className='game-board' key={box.id} >
+          <Box id={box.id} value={box.value} />
         </div>
       ))}
     </div>
