@@ -7,11 +7,16 @@ const GameContext = createContext();
 
 const GameProvider = ({ children }) => {
   const [board, setBoard] = useState(initialBoard);
+  const [currentPlayer, setCurrentPlayer] = useState('X');
+
+  function switchPlayer() {
+    setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
+  }
   
   function handleSpace(id) {
     const updatedBox = {
       id: id,
-      value: 'X'
+      value: currentPlayer
     };
   
     setBoard((prevState) =>
@@ -19,7 +24,7 @@ const GameProvider = ({ children }) => {
   }
   
 
-  return <GameContext.Provider value={{ board, setBoard, handleSpace }}>{children}</GameContext.Provider>;
+  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer }}>{children}</GameContext.Provider>;
 };
 
 export { GameContext, GameProvider };
