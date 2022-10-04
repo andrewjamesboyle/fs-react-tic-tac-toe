@@ -23,6 +23,14 @@ const GameProvider = ({ children }) => {
       setGameMessage(`It's your turn X`);
     }
   }
+
+  function disableSpace(value) {
+    let className = '';
+    if (value !== '') {
+      className = 'disabled';
+    }
+    return className;
+  }
   
   function handleSpace(id) {
     const updatedBox = {
@@ -37,7 +45,7 @@ const GameProvider = ({ children }) => {
   
 
 
-  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage }}>{children}</GameContext.Provider>;
+  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage, disableSpace }}>{children}</GameContext.Provider>;
 };
 
 export { GameContext, GameProvider };

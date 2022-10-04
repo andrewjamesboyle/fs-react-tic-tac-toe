@@ -17,3 +17,7 @@
     font-family: OCR-A;
     border-radius: 10px;
 }
+
+.disabled {
+    pointer-events: none;
+}
