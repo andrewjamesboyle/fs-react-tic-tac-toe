@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "OCR-A";
+    src: url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.ttf) format("truetype"),
+         url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.otf) format("opentype");
+  }
+
+.game-status {
+    font-family: OCR-A;
+    font-size: 2rem;
+    height: 5vh;
+}
