@@ -8,9 +8,20 @@ const GameProvider = ({ children }) => {
   const [currentPlayer, setCurrentPlayer] = useState('X');
   const [gameMessage, setGameMessage] = useState(`It's ${currentPlayer}'s turn`);
 
+  // function switchPlayer() {
+  //   setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
+  //   const displayPlayer = currentPlayer;
+  //   setGameMessage(`It's your turn ${displayPlayer}`);
+  // }
+
   function switchPlayer() {
-    setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
-    setGameMessage(`It's ${currentPlayer}'s turn`);
+    if (currentPlayer === 'X') {
+      setCurrentPlayer('O');
+      setGameMessage(`It's your turn O`);
+    } else {
+      setCurrentPlayer('X');
+      setGameMessage(`It's your turn X`);
+    }
   }
   
   function handleSpace(id) {
@@ -21,9 +32,10 @@ const GameProvider = ({ children }) => {
     
     setBoard((prevState) =>
       prevState.map((prevBox) => (prevBox.id === id ? updatedBox : prevBox)));
+
   }
   
-  
+
 
   return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage }}>{children}</GameContext.Provider>;
 };
