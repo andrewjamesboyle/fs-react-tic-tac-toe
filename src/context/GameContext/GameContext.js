@@ -7,6 +7,8 @@ const GameProvider = ({ children }) => {
   const [board, setBoard] = useState(initialBoard);
   const [currentPlayer, setCurrentPlayer] = useState('X');
   const [gameMessage, setGameMessage] = useState(`It's ${currentPlayer}'s turn`);
+  const [winner, setWinner] = useState('');
+  const [active, setActive] = useState(true);
 
   // function switchPlayer() {
   //   setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
@@ -43,9 +45,15 @@ const GameProvider = ({ children }) => {
 
   }
   
+  function checkWin() {
+    if (board[0].value === 'X' && board[1].value === 'X' && board[2].value === 'X') {
+      setWinner('X');
+      setGameMessage('X wins!');
+      setActive(false);
+    }
+  }
 
-
-  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage, disableSpace }}>{children}</GameContext.Provider>;
+  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage, disableSpace, checkWin }}>{children}</GameContext.Provider>;
 };
 
 export { GameContext, GameProvider };
