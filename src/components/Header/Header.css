@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "OCR-A";
+    src: url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.ttf) format("truetype"),
+         url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.otf) format("opentype");
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: OCR-A;
+    font-size: 3rem;
+    height: 10vh;
+  }

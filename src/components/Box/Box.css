@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "OCR-A";
+    src: url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.ttf) format("truetype"),
+         url(https://cdn.jsdelivr.net/gh/raisty/OCR-B/dist/OCR-A.otf) format("opentype");
+  }
+
+.box {
+    align-items: center;
+    color: white;
+    background-color: black;
+    display: flex;
+    font-size: 5rem;
+    font-weight: 700;
+    justify-content: center;
+    height: 180px;
+    margin: 10px;
+    font-family: OCR-A;
+    border-radius: 10px;
+}
+
+.disabled {
+    pointer-events: none;
+}
