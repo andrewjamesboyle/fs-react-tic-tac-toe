@@ -55,6 +55,76 @@ const GameProvider = ({ children }) => {
       setWinner('O');
       setGameMessage('O wins!');
     }
+    if (board[3].value === 'X' && board[4].value === 'X' && board[5].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[3].value === 'O' && board[4].value === 'O' && board[5].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[6].value === 'X' && board[7].value === 'X' && board[8].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[6].value === 'O' && board[7].value === 'O' && board[8].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[0].value === 'X' && board[3].value === 'X' && board[6].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[0].value === 'O' && board[3].value === 'O' && board[6].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[1].value === 'X' && board[4].value === 'X' && board[7].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[1].value === 'O' && board[4].value === 'O' && board[7].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[2].value === 'X' && board[5].value === 'X' && board[8].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[2].value === 'O' && board[5].value === 'O' && board[8].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[0].value === 'X' && board[4].value === 'X' && board[8].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[0].value === 'O' && board[4].value === 'O' && board[8].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
+    if (board[6].value === 'X' && board[4].value === 'X' && board[2].value === 'X') {
+      setActive(false);
+      setWinner('X');
+      setGameMessage('X wins!');
+    }
+    if (board[6].value === 'O' && board[4].value === 'O' && board[2].value === 'O') {
+      setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
+    }
   }
 
   checkWin();
