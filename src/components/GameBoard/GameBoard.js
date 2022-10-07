@@ -8,6 +8,9 @@ export default function GameBoard() {
 
   const className = gameOver();
 
+  // const handleReset = () => {
+
+  // }
 
   return (
     <div className={`${className} game-board-container`}>
@@ -16,6 +19,9 @@ export default function GameBoard() {
           <Box id={box.id} value={box.value} />
         </div>
       ))}
+      <div>
+        {/* <button onClick={handleReset}>RESET</button> */}
+      </div>
     </div>
   );
 }

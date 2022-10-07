@@ -40,7 +40,6 @@ const GameProvider = ({ children }) => {
     
     setBoard((prevState) =>
       prevState.map((prevBox) => (prevBox.id === id ? updatedBox : prevBox)));
-
   }
   
   function checkWin() {
@@ -49,87 +48,104 @@ const GameProvider = ({ children }) => {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[0].value === 'O' && board[1].value === 'O' && board[2].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[3].value === 'X' && board[4].value === 'X' && board[5].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[3].value === 'O' && board[4].value === 'O' && board[5].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[6].value === 'X' && board[7].value === 'X' && board[8].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[6].value === 'O' && board[7].value === 'O' && board[8].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[0].value === 'X' && board[3].value === 'X' && board[6].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[0].value === 'O' && board[3].value === 'O' && board[6].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[1].value === 'X' && board[4].value === 'X' && board[7].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[1].value === 'O' && board[4].value === 'O' && board[7].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[2].value === 'X' && board[5].value === 'X' && board[8].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[2].value === 'O' && board[5].value === 'O' && board[8].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[0].value === 'X' && board[4].value === 'X' && board[8].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[0].value === 'O' && board[4].value === 'O' && board[8].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
     if (board[6].value === 'X' && board[4].value === 'X' && board[2].value === 'X') {
       setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+      return;
     }
     if (board[6].value === 'O' && board[4].value === 'O' && board[2].value === 'O') {
       setActive(false);
       setWinner('O');
       setGameMessage('O wins!');
+      return;
     }
-    if (board[0, 1, 2, 3, 4, 5, 6, 7, 8].value !== '') {
+    else if (board[0].value && board[1].value && board[2].value && board[3].value && board[4].value && board[5].value && board[6].value && board[7].value && board[8].value) {
       setActive(false);
       setGameMessage('Cats Game!');
     }
   }
+
 
   checkWin();
   gameOver();
