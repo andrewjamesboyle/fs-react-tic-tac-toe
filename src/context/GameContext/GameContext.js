@@ -10,25 +10,23 @@ const GameProvider = ({ children }) => {
   const [winner, setWinner] = useState('');
   const [active, setActive] = useState(true);
 
-  // function switchPlayer() {
-  //   setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
-  //   const displayPlayer = currentPlayer;
-  //   setGameMessage(`It's your turn ${displayPlayer}`);
-  // }
-
   function switchPlayer() {
-    if (currentPlayer === 'X') {
-      setCurrentPlayer('O');
-      setGameMessage(`It's your turn O`);
-    } else {
-      setCurrentPlayer('X');
-      setGameMessage(`It's your turn X`);
-    }
+    const nextPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    setCurrentPlayer(nextPlayer);
+    setGameMessage(`It's your turn ${nextPlayer}`);
   }
 
   function disableSpace(value) {
     let className = '';
     if (value !== '') {
+      className = 'disabled';
+    }
+    return className;
+  }
+
+  function gameOver() {
+    let className = '';
+    if (!active) {
       className = 'disabled';
     }
     return className;
@@ -46,14 +44,23 @@ const GameProvider = ({ children }) => {
   }
   
   function checkWin() {
+    if (!active) return; 
     if (board[0].value === 'X' && board[1].value === 'X' && board[2].value === 'X') {
+      setActive(false);
       setWinner('X');
       setGameMessage('X wins!');
+    }
+    if (board[0].value === 'O' && board[1].value === 'O' && board[2].value === 'O') {
       setActive(false);
+      setWinner('O');
+      setGameMessage('O wins!');
     }
   }
 
-  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage, disableSpace, checkWin }}>{children}</GameContext.Provider>;
+  checkWin();
+  gameOver();
+
+  return <GameContext.Provider value={{ board, setBoard, handleSpace, currentPlayer, switchPlayer, gameMessage, disableSpace, gameOver, winner }}>{children}</GameContext.Provider>;
 };
 
 export { GameContext, GameProvider };
