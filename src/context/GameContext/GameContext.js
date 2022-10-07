@@ -125,6 +125,10 @@ const GameProvider = ({ children }) => {
       setWinner('O');
       setGameMessage('O wins!');
     }
+    if (board[0, 1, 2, 3, 4, 5, 6, 7, 8].value !== '') {
+      setActive(false);
+      setGameMessage('Cats Game!');
+    }
   }
 
   checkWin();
