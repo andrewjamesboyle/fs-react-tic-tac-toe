@@ -43,12 +43,16 @@ const GameProvider = ({ children }) => {
   function handleSpace(id) {
     const updatedBox = {
       id: id,
-      value: currentPlayer
+      value: 'X'
     };
+
     
     setBoard((prevState) =>
       prevState.map((prevBox) => (prevBox.id === id ? updatedBox : prevBox)));
-  }
+
+      // generate new board, build an array of current empty spaces, pick a random empty space and update it 'O'
+      
+    }
   
   function checkWin() {
     if (!active) return; 
@@ -162,3 +166,6 @@ const GameProvider = ({ children }) => {
 };
 
 export { GameContext, GameProvider };
+
+// in the user click event the AI move will also have to occur
+// upon click, evaluate the remaining spaces and assign an O to it
